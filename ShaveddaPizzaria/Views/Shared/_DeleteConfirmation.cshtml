@@ -1,0 +1,47 @@
+﻿@model ShaveddaPizzaria.Models.DeleteData
+
+@{
+	string methodName = "";
+	if (Model.DataClass == typeof(PizzaPreset))
+	{
+		methodName = "DeletePreset";
+	}
+	if (Model.DataClass == typeof(PizzaOrder))
+	{
+		methodName = "DeleteOrder";
+	}
+}
+
+<!-- Modal -->
+<div class="modal fade" id="deleteConfirmation-@Model.DataId" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content font-monospace border border-2 border-danger">
+			<div class="modal-header flex-column pb-2">
+				<div class="icon-box">
+					<i class="bi bi-exclamation-triangle h1 text-danger"></i>
+				</div>
+				<h4 class="modal-title w-100 text-center">Are you sure?</h4>
+			</div>
+			<div class="modal-body p-2">
+				<div class="row justify-content-center text-start">
+					<div class="col-10">
+						<p class="m-0">This action cannot be undone. All values associated will be lost.</p>
+					</div>
+				</div>
+			</div>
+			<form method="post" asp-action=@methodName asp-route-id=@Model.DataId>
+				<div class="modal-footer justify-content-evenly pt-2">
+					<input asp-for=DataId hidden />
+					<button type="button" class="btn btn-secondary col-md-3" data-bs-dismiss="modal">
+						Close
+					</button>
+					<button type="submit" class="btn btn-danger col-md-3">
+						Delete
+					</button>
+
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+@Html.AntiForgeryToken()

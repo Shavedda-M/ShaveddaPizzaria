@@ -1,0 +1,87 @@
+﻿@model ShaveddaPizzaria.Models.PizzaPreset
+
+<div class="container font-monospace">
+	<div>
+		<h1 class="display-4 mt-4">Edit Preset</h1>
+		<hr />
+	</div>
+	<form method="post" class="was-validated" novalidate>
+		<div class="border border-warning border-4 rounded-3 px-4 py-3 mt-4 bg-black bg-opacity-50">
+
+			<!-- Bug? Id and ImageTitle always reset when post. Temp Fix include input with hidden attribute-->
+			<input asp-for="PizzaId" hidden>
+			<input asp-for="ImageTitle" hidden>
+			<input asp-for="PizzaSize" hidden>
+
+			<div class="row mb-3">
+				<label asp-for="PizzaName" class="col-sm-2 col-form-label col-form-label-lg text-white">Pizza name</label>
+				<div class="col-sm-10">
+					<input type="text" asp-for="PizzaName" class="form-control form-control-lg" maxlength="30" required>	
+					<div class="invalid-feedback">
+						Please enter a name.
+					</div>
+				</div>
+			</div>
+			<div class="row mb-3">
+				<label class="col-sm-2 col-form-label col-form-label-lg text-white">Preset image</label>
+				<div class="col-sm-10">
+					<input class="form-control form-control-lg" type="file" required disabled>
+					<div class="invalid-feedback">
+						Please select an image.
+					</div>
+				</div>
+			</div>
+			<div class="row mb-3">
+				<label class="col-sm-2 col-form-label col-form-label-lg text-white">Sauce</label>
+				<div class="col-sm-10">
+					<select class="form-select form-select-lg" asp-for="PizzaSauce" asp-items="Html.GetEnumSelectList<PizzaSauce>()" required>
+						<option selected value="" disabled></option>
+					</select>
+					<div class="invalid-feedback">
+						Please select a sauce.
+					</div>
+				</div>
+			</div>
+			<fieldset class="row mb-3">
+				<legend class="col-sm-2 col-form-label col-form-label-lg pt-0">Ingredients</legend>
+				<div class="col-sm-5 form-check">
+					<div class="form-check ps-0">
+						<input type="checkbox" class="btn-check" asp-for="HasCheese" autocomplete="off">
+						<label class="btn btn-outline-primary mb-3 me-2" asp-for="HasCheese">Cheese</label>
+
+						<input type="checkbox" class="btn-check" asp-for="HasPepperoni" autocomplete="off">
+						<label class="btn btn-outline-primary mb-3 me-2" asp-for="HasPepperoni">Pepperoni</label>
+
+						<input type="checkbox" class="btn-check" asp-for="HasMushroom" autocomplete="off">
+						<label class="btn btn-outline-primary mb-3 me-2" asp-for="HasMushroom">Mushroom</label>
+
+						<input type="checkbox" class="btn-check" asp-for="HasPineapple" autocomplete="off">
+						<label class="btn btn-outline-primary mb-3 me-2" asp-for="HasPineapple">Pineapple</label>
+
+						<input type="checkbox" class="btn-check" asp-for="HasTuna" autocomplete="off">
+						<label class="btn btn-outline-primary mb-3 me-2" asp-for="HasTuna">Tuna</label>
+
+						<input type="checkbox" class="btn-check" asp-for="HasPrawn" autocomplete="off">
+						<label class="btn btn-outline-primary mb-3 me-2" asp-for="HasPrawn">Prawn</label>
+
+						<input type="checkbox" class="btn-check" asp-for="HasHam" autocomplete="off">
+						<label class="btn btn-outline-primary mb-3 me-2" asp-for="HasHam">Ham</label>
+
+						<input type="checkbox" class="btn-check" asp-for="HasBeef" autocomplete="off">
+						<label class="btn btn-outline-primary mb-3 me-2" asp-for="HasBeef">Beef</label>
+					</div>
+				</div>
+			</fieldset>
+			<button type="submit" class="btn btn-warning" style="width:150px;">Update</button>
+			<a class="btn btn-danger" style="width:150px;" asp-controller="Pizza" asp-action="Presets">Back to List</a>
+		</div>
+	</form>
+</div>
+
+@section Scripts {
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}
+
+
