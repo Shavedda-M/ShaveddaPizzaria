@@ -11,8 +11,8 @@ using ShaveddaPizzaria.Data;
 namespace ShaveddaPizzaria.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240119110428_RemovedBasePrice")]
-    partial class RemovedBasePrice
+    [Migration("20240124013959_UpdatePropNameInPizzaOrder_And_AddStatusEnum")]
+    partial class UpdatePropNameInPizzaOrder_And_AddStatusEnum
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -72,10 +72,6 @@ namespace ShaveddaPizzaria.Migrations
 
                     b.Property<bool>("HasTuna")
                         .HasColumnType("bit");
-
-                    b.Property<string>("ImageTitle")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PizzaName")
                         .IsRequired()

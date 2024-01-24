@@ -111,7 +111,43 @@ namespace ShaveddaPizzaria.Controllers
             return RedirectToAction("Presets");
         }
 
-        public IActionResult CustomPizza()
+		public IActionResult CustomizePreset(int? id)
+		{
+            PizzaPreset preset = _context.PizzaPresets.Find(id);
+            if (preset == null)
+            {
+                return NotFound();
+            }
+            PizzaOrder pizzaOrder = new PizzaOrder();
+            pizzaOrder.OrderDetails = new PizzaOrderDetails();
+            pizzaOrder.OrderDetails.PizzaSauce = preset.PizzaSauce;
+            pizzaOrder.OrderDetails.PizzaName = preset.PizzaName;
+			pizzaOrder.OrderDetails.HasCheese = preset.HasCheese;
+			pizzaOrder.OrderDetails.HasPepperoni = preset.HasPepperoni;
+			pizzaOrder.OrderDetails.HasMushroom = preset.HasMushroom;
+			pizzaOrder.OrderDetails.HasPineapple = preset.HasPineapple;
+			pizzaOrder.OrderDetails.HasTuna = preset.HasTuna;
+			pizzaOrder.OrderDetails.HasPrawn = preset.HasPrawn;
+			pizzaOrder.OrderDetails.HasHam = preset.HasHam;
+			pizzaOrder.OrderDetails.HasBeef = preset.HasBeef;
+
+			ViewData["PresetImage"] = preset.ImageTitle;
+			return View(pizzaOrder);
+		}
+
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public IActionResult CustomizePreset(PizzaOrder order)
+		{
+			order.Email = "mockemail@gmail.com";
+			order.OrderDetails.TotalPrice = order.OrderDetails.CalculateTotalPrice();
+			_context.PizzaOrders.Add(order);
+			_context.SaveChanges();
+			TempData["success"] = "Order created successfully. Thank you for placing you order at Shavedda Pizzaria!";
+			return RedirectToAction("Index");
+		}
+
+		public IActionResult CustomPizza()
         {
             return View();
         }
@@ -121,7 +157,7 @@ namespace ShaveddaPizzaria.Controllers
         public IActionResult CustomPizza(PizzaOrder order)
         {
             order.Email = "mockemail@gmail.com";
-            order.OrderDetails.CalculateTotalPrice();
+            order.OrderDetails.TotalPrice = order.OrderDetails.CalculateTotalPrice();
             _context.PizzaOrders.Add(order);
             _context.SaveChanges();
             TempData["success"] = "Order created successfully. Thank you for placing you order at Shavedda Pizzaria!";
@@ -143,7 +179,7 @@ namespace ShaveddaPizzaria.Controllers
             }
             try
             {
-                var order = _context.PizzaOrders.Include(x => x.OrderDetails).First(u => u.Id == id);
+                var order = _context.PizzaOrders.Include(x => x.OrderDetails).First(u => u.OrderId == id);
                 return View(order);
             }
             catch (ArgumentNullException ex)

@@ -37,7 +37,7 @@
 							@order.Address
 						</td>
 						<td class="col-3 text-end">
-							<a class="btn btn-outline-info col-md-5" asp-action="OrderDetail" asp-route-id="@order.Id">
+							<a class="btn btn-outline-info col-md-5" asp-action="OrderDetail" asp-route-id="@order.OrderId">
 								<i class="bi bi-justify"></i>&nbsp;Details
 							</a>
 							<a class="btn btn-outline-danger col-md-5" data-bs-toggle="modal" data-bs-target="#deleteConfirmation-@order.OrderDetails.PizzaId">

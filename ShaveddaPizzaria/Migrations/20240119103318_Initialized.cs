@@ -75,7 +75,7 @@ namespace ShaveddaPizzaria.Migrations
                         name: "FK_PizzaOrderDetails_PizzaOrders_PizzaId",
                         column: x => x.PizzaId,
                         principalTable: "PizzaOrders",
-                        principalColumn: "Id",
+                        principalColumn: "OrderId",
                         onDelete: ReferentialAction.Cascade);
                 });
         }

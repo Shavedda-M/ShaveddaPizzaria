@@ -18,4 +18,13 @@ namespace ShaveddaPizzaria.Models
         [Display(Name = "Alfredo Sauce")]
         AlfredoSauce = 3,
     }
+
+	public enum PizzaStatus
+	{
+		Ordered = 1,
+		[Display(Name = "Waiting to be delivered")]
+		WaitingToBeDelivered = 2,
+		Delivered = 3,
+        Cancelled = 4
+	}
 }

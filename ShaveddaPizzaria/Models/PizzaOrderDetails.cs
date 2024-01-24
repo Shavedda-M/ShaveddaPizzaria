@@ -10,12 +10,12 @@ namespace ShaveddaPizzaria.Models
         [Key, ForeignKey("PizzaOrder")]
         public int PizzaId { get; set; }
         [Required]
-        public string PizzaName { get; set; }
+        public string? PizzaName { get; set; }
         [Required]
         public PizzaSize PizzaSize { get; set; }
         [Required]
         public PizzaSauce PizzaSauce { get; set; }
-        public float TotalPrice { get; set; }
+        public float? TotalPrice { get; set; }
 
         // Pizza Ingredients
         public bool HasCheese { get; set; }

@@ -5,11 +5,12 @@ namespace ShaveddaPizzaria.Models
     public class PizzaOrder
     {
         [Key]
-        public int Id { get; set; }
+        public int OrderId { get; set; }
         [Required]
-        public string Email { get; set; }
+        [DataType(DataType.EmailAddress)]
+        public string? Email { get; set; }
         [Required]
-        public string Address { get; set; }
+        public string? Address { get; set; }
         public PizzaOrderDetails OrderDetails { get; set; }
     }
 }

@@ -25,11 +25,11 @@ namespace ShaveddaPizzaria.Migrations
 
             modelBuilder.Entity("ShaveddaPizzaria.Models.PizzaOrder", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("OrderId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"), 1L, 1);
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -39,7 +39,7 @@ namespace ShaveddaPizzaria.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("OrderId");
 
                     b.ToTable("PizzaOrders");
                 });
