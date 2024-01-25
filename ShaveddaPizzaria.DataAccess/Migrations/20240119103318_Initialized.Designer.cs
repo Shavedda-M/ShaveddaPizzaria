@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ShaveddaPizzaria.Data;
+using ShaveddaPizzaria.DataAccess.Data;
 
 #nullable disable
 
-namespace ShaveddaPizzaria.Migrations
+namespace ShaveddaPizzaria.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240119110428_RemovedBasePrice")]
-    partial class RemovedBasePrice
+    [Migration("20240119103318_Initialized")]
+    partial class Initialized
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -48,6 +48,9 @@ namespace ShaveddaPizzaria.Migrations
                 {
                     b.Property<int>("PizzaId")
                         .HasColumnType("int");
+
+                    b.Property<float>("BasePrice")
+                        .HasColumnType("real");
 
                     b.Property<bool>("HasBeef")
                         .HasColumnType("bit");
@@ -103,6 +106,9 @@ namespace ShaveddaPizzaria.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PizzaId"), 1L, 1);
 
+                    b.Property<float>("BasePrice")
+                        .HasColumnType("real");
+
                     b.Property<bool>("HasBeef")
                         .HasColumnType("bit");
 
@@ -140,6 +146,9 @@ namespace ShaveddaPizzaria.Migrations
 
                     b.Property<int>("PizzaSize")
                         .HasColumnType("int");
+
+                    b.Property<float>("TotalPrice")
+                        .HasColumnType("real");
 
                     b.HasKey("PizzaId");
 

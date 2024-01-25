@@ -2,25 +2,25 @@
 
 #nullable disable
 
-namespace ShaveddaPizzaria.Migrations
+namespace ShaveddaPizzaria.DataAccess.Migrations
 {
-    public partial class RemovedBasePrice : Migration
+    public partial class RemoveImageTitleFromOrderDetails : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "BasePrice",
+                name: "ImageTitle",
                 table: "PizzaOrderDetails");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<float>(
-                name: "BasePrice",
+            migrationBuilder.AddColumn<string>(
+                name: "ImageTitle",
                 table: "PizzaOrderDetails",
-                type: "real",
+                type: "nvarchar(max)",
                 nullable: false,
-                defaultValue: 0f);
+                defaultValue: "");
         }
     }
 }

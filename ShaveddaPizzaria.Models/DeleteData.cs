@@ -1,6 +1,4 @@
-﻿using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Controller;
-
-namespace ShaveddaPizzaria.Models
+﻿namespace ShaveddaPizzaria.Models
 {
 	public class DeleteData
 	{

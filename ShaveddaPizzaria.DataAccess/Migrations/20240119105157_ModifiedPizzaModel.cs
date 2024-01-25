@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace ShaveddaPizzaria.Migrations
+namespace ShaveddaPizzaria.DataAccess.Migrations
 {
     public partial class ModifiedPizzaModel : Migration
     {

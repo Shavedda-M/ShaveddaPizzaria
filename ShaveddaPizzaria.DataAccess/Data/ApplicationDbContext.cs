@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShaveddaPizzaria.Models;
 
-namespace ShaveddaPizzaria.Data
+namespace ShaveddaPizzaria.DataAccess.Data
 {
 	public class ApplicationDbContext : DbContext
 	{

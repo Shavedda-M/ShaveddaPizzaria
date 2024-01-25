@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ShaveddaPizzaria.Data;
+using ShaveddaPizzaria.DataAccess.Data;
 using ShaveddaPizzaria.Models;
 
 namespace ShaveddaPizzaria.Controllers

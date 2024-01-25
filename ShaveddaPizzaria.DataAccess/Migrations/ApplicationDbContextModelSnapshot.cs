@@ -2,19 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ShaveddaPizzaria.Data;
+using ShaveddaPizzaria.DataAccess.Data;
 
 #nullable disable
 
-namespace ShaveddaPizzaria.Migrations
+namespace ShaveddaPizzaria.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240120034405_RemoveImageTitleFromOrderDetails")]
-    partial class RemoveImageTitleFromOrderDetails
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

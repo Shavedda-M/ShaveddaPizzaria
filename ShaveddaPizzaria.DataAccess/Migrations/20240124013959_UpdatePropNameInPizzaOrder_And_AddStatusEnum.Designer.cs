@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ShaveddaPizzaria.Data;
+using ShaveddaPizzaria.DataAccess.Data;
 
 #nullable disable
 
-namespace ShaveddaPizzaria.Migrations
+namespace ShaveddaPizzaria.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240119105157_ModifiedPizzaModel")]
-    partial class ModifiedPizzaModel
+    [Migration("20240124013959_UpdatePropNameInPizzaOrder_And_AddStatusEnum")]
+    partial class UpdatePropNameInPizzaOrder_And_AddStatusEnum
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,9 +49,6 @@ namespace ShaveddaPizzaria.Migrations
                     b.Property<int>("PizzaId")
                         .HasColumnType("int");
 
-                    b.Property<float>("BasePrice")
-                        .HasColumnType("real");
-
                     b.Property<bool>("HasBeef")
                         .HasColumnType("bit");
 
@@ -75,10 +72,6 @@ namespace ShaveddaPizzaria.Migrations
 
                     b.Property<bool>("HasTuna")
                         .HasColumnType("bit");
-
-                    b.Property<string>("ImageTitle")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PizzaName")
                         .IsRequired()
