@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShaveddaPizzaria.Utility
+namespace ShaveddaPizzariaWeb.Utility
 {
 	internal static class StaticDetails
 	{

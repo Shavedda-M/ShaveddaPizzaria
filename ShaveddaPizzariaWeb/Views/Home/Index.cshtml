@@ -1,0 +1,44 @@
+﻿@model IEnumerable<PizzaPreset>
+
+<div class="text-center">
+	<div class="font-monospace mt-4">
+		<h1>Our Great Selection Of Pizzas</h1>
+		<h5>Choose one, or try our Pizza Builder! Then Order and Done!</h5>
+		<h5>No need to give any of your details!</h5>
+		<h5>We already know everything!</h5>
+		<p class="text-end">Only one pizza per order.</p>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-12 mb-5 mt-5 ms-0 me-0">
+				<div class="row align-items-center bg-black bg-opacity-50 border border-5 border-warning rounded-3">
+					<div class="col-4">
+						<img src="~/images/pizzas/Create.png" class="w-100"/>
+					</div>
+					<div class="col-8 text-start font-monospace">
+						<h3>
+							Create you own Pizza!
+						</h3>
+						<p>Make your own pizza with our Pizza Creator!</p>
+						<a class="btn btn-outline-warning" asp-controller="PizzaOrder" asp-action="CustomPizza">Try Now!</a>
+
+					</div>
+				</div>
+			</div>
+			@foreach(var preset in Model)
+			{
+				string imagePath;
+				imagePath = "~/images/Pizzas/" + preset.ImageTitle;
+				
+
+				<div class="col-4 mb-5">
+					<a class="presetImage" asp-controller="PizzaOrder" asp-action="OrderPreset" asp-route-id="@preset.PizzaId">
+						<img src=@imagePath class="w-100 bg-black bg-opacity-50 border border-4 border-warning rounded-2" asp-append-version="true" />
+					</a>	
+				</div>
+			}
+
+		</div>
+	</div>
+</div>

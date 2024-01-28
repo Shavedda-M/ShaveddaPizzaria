@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShaveddaPizzaria.Models
@@ -25,8 +26,8 @@ namespace ShaveddaPizzaria.Models
         public bool HasPrawn { get; set; }
         public bool HasHam { get; set; }
         public bool HasBeef { get; set; }
-
-        public PizzaOrder PizzaOrder { get; set; }
+		[ValidateNever]
+		public PizzaOrder PizzaOrder { get; set; }
 
         private float CalculateIngredientsPrice()
         {

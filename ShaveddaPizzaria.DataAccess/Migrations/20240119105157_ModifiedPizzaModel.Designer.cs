@@ -23,7 +23,7 @@ namespace ShaveddaPizzaria.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("ShaveddaPizzaria.Models.PizzaOrder", b =>
+            modelBuilder.Entity("ShaveddaPizzariaWeb.Models.PizzaOrder", b =>
                 {
                     b.Property<int>("OrderId")
                         .ValueGeneratedOnAdd()
@@ -44,7 +44,7 @@ namespace ShaveddaPizzaria.DataAccess.Migrations
                     b.ToTable("PizzaOrders");
                 });
 
-            modelBuilder.Entity("ShaveddaPizzaria.Models.PizzaOrderDetails", b =>
+            modelBuilder.Entity("ShaveddaPizzariaWeb.Models.PizzaOrderDetails", b =>
                 {
                     b.Property<int>("PizzaId")
                         .HasColumnType("int");
@@ -98,7 +98,7 @@ namespace ShaveddaPizzaria.DataAccess.Migrations
                     b.ToTable("PizzaOrderDetails");
                 });
 
-            modelBuilder.Entity("ShaveddaPizzaria.Models.PizzaPreset", b =>
+            modelBuilder.Entity("ShaveddaPizzariaWeb.Models.PizzaPreset", b =>
                 {
                     b.Property<int>("PizzaId")
                         .ValueGeneratedOnAdd()
@@ -149,18 +149,18 @@ namespace ShaveddaPizzaria.DataAccess.Migrations
                     b.ToTable("PizzaPresets");
                 });
 
-            modelBuilder.Entity("ShaveddaPizzaria.Models.PizzaOrderDetails", b =>
+            modelBuilder.Entity("ShaveddaPizzariaWeb.Models.PizzaOrderDetails", b =>
                 {
-                    b.HasOne("ShaveddaPizzaria.Models.PizzaOrder", "PizzaOrder")
+                    b.HasOne("ShaveddaPizzariaWeb.Models.PizzaOrder", "PizzaOrder")
                         .WithOne("OrderDetails")
-                        .HasForeignKey("ShaveddaPizzaria.Models.PizzaOrderDetails", "PizzaId")
+                        .HasForeignKey("ShaveddaPizzariaWeb.Models.PizzaOrderDetails", "PizzaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("PizzaOrder");
                 });
 
-            modelBuilder.Entity("ShaveddaPizzaria.Models.PizzaOrder", b =>
+            modelBuilder.Entity("ShaveddaPizzariaWeb.Models.PizzaOrder", b =>
                 {
                     b.Navigation("OrderDetails")
                         .IsRequired();

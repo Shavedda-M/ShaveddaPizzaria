@@ -1,0 +1,15 @@
+﻿using ShaveddaPizzaria.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ShaveddaPizzaria.DataAccess.Repository.IRepository
+{
+	public interface IPizzaOrderRepository : IRepository<PizzaOrder>
+	{
+		void Update(PizzaOrder obj);
+		void Save();
+	}
+}

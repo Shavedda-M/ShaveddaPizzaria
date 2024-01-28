@@ -9,7 +9,6 @@ namespace ShaveddaPizzaria.Models
         [Required]
         public string PizzaName { get; set; }
         public string ImageTitle { get; set; } = "Create.png";
-        public PizzaSize PizzaSize { get; set; } = PizzaSize.Medium;
         [Required]
         public PizzaSauce PizzaSauce { get; set; }
 

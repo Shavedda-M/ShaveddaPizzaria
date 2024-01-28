@@ -4,7 +4,6 @@
     {
         int PizzaId { get; set; }
         string PizzaName { get; set; }
-        PizzaSize PizzaSize { get; set; }
         PizzaSauce PizzaSauce { get; set; }
 
         // Pizza Ingredients

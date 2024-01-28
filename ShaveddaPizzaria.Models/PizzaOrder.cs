@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace ShaveddaPizzaria.Models
 {
@@ -7,7 +8,7 @@ namespace ShaveddaPizzaria.Models
         [Key]
         public int OrderId { get; set; }
 		//public string? OwnerID { get; set; }
-		[Required]
+		[Required, ValidateNever]
         [DataType(DataType.EmailAddress)]
         public string? Email { get; set; }
         [Required]
