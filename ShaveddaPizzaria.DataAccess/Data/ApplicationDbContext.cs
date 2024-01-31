@@ -18,15 +18,15 @@ namespace ShaveddaPizzaria.DataAccess.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<PizzaPreset>().HasData(
-                new PizzaPreset() { PizzaId = 1, ImageTitle = "Margerita.png", PizzaName = "Margerita", PizzaSauce = PizzaSauce.TomatoSauce, HasCheese = true },
-                new PizzaPreset() { PizzaId = 2, ImageTitle = "Bolognese.png", PizzaName = "Bolognese", PizzaSauce = PizzaSauce.TomatoSauce, HasCheese = true, HasBeef = true },
-                new PizzaPreset() { PizzaId = 3, ImageTitle = "Hawaiian.png", PizzaName = "Hawaiian", PizzaSauce = PizzaSauce.TomatoSauce, HasCheese = true, HasHam = true, HasPineapple = true, HasPrawn = true },
-                new PizzaPreset() { PizzaId = 4, ImageTitle = "Carbonara.png", PizzaName = "Carbonara", PizzaSauce = PizzaSauce.TomatoSauce, HasCheese = true, HasHam = true, HasMushroom = true },
-                new PizzaPreset() { PizzaId = 5, ImageTitle = "MeatFeast.png", PizzaName = "MeatFeast", PizzaSauce = PizzaSauce.TomatoSauce, HasCheese = true, HasHam = true, HasBeef = true },
-                new PizzaPreset() { PizzaId = 6, ImageTitle = "Mushroom.png", PizzaName = "Mushroom", PizzaSauce = PizzaSauce.TomatoSauce, HasCheese = true, HasMushroom = true },
-                new PizzaPreset() { PizzaId = 7, ImageTitle = "Pepperoni.png", PizzaName = "Pepperoni", PizzaSauce = PizzaSauce.TomatoSauce, HasCheese = true, HasPepperoni = true },
-                new PizzaPreset() { PizzaId = 8, ImageTitle = "Seafood.png", PizzaName = "Seafood", PizzaSauce = PizzaSauce.TomatoSauce, HasCheese = true, HasTuna = true, HasPrawn = true },
-                new PizzaPreset() { PizzaId = 9, ImageTitle = "Vegetarian.png", PizzaName = "Vegetarian", PizzaSauce = PizzaSauce.TomatoSauce, HasCheese = true, HasMushroom = true, HasPineapple = true }
+                new PizzaPreset() { PizzaId = 1, ImagePath = @"\images\presets\Margerita.png", PizzaName = "Margerita", PizzaSauce = PizzaSauce.TomatoSauce, HasCheese = true },
+                new PizzaPreset() { PizzaId = 2, ImagePath = @"\images\presets\Bolognese.png", PizzaName = "Bolognese", PizzaSauce = PizzaSauce.TomatoSauce, HasCheese = true, HasBeef = true },
+                new PizzaPreset() { PizzaId = 3, ImagePath = @"\images\presets\Hawaiian.png", PizzaName = "Hawaiian", PizzaSauce = PizzaSauce.TomatoSauce, HasCheese = true, HasHam = true, HasPineapple = true, HasPrawn = true },
+                new PizzaPreset() { PizzaId = 4, ImagePath = @"\images\presets\Carbonara.png", PizzaName = "Carbonara", PizzaSauce = PizzaSauce.TomatoSauce, HasCheese = true, HasHam = true, HasMushroom = true },
+                new PizzaPreset() { PizzaId = 5, ImagePath = @"\images\presets\MeatFeast.png", PizzaName = "MeatFeast", PizzaSauce = PizzaSauce.TomatoSauce, HasCheese = true, HasHam = true, HasBeef = true },
+                new PizzaPreset() { PizzaId = 6, ImagePath = @"\images\presets\Mushroom.png", PizzaName = "Mushroom", PizzaSauce = PizzaSauce.TomatoSauce, HasCheese = true, HasMushroom = true },
+                new PizzaPreset() { PizzaId = 7, ImagePath = @"\images\presets\Pepperoni.png", PizzaName = "Pepperoni", PizzaSauce = PizzaSauce.TomatoSauce, HasCheese = true, HasPepperoni = true },
+                new PizzaPreset() { PizzaId = 8, ImagePath = @"\images\presets\Seafood.png", PizzaName = "Seafood", PizzaSauce = PizzaSauce.TomatoSauce, HasCheese = true, HasTuna = true, HasPrawn = true },
+                new PizzaPreset() { PizzaId = 9, ImagePath = @"\images\presets\Vegetarian.png", PizzaName = "Vegetarian", PizzaSauce = PizzaSauce.TomatoSauce, HasCheese = true, HasMushroom = true, HasPineapple = true }
                 );
         }
     }

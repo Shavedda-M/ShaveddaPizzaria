@@ -124,7 +124,7 @@ namespace ShaveddaPizzaria.DataAccess.Migrations
                     b.Property<bool>("HasTuna")
                         .HasColumnType("bit");
 
-                    b.Property<string>("ImageTitle")
+                    b.Property<string>("ImagePath")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

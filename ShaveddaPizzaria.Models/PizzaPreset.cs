@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 
 namespace ShaveddaPizzaria.Models
 {
@@ -8,7 +9,8 @@ namespace ShaveddaPizzaria.Models
         public int PizzaId { get; set; }
         [Required]
         public string PizzaName { get; set; }
-        public string ImageTitle { get; set; } = "Create.png";
+        [ValidateNever]
+        public string ImagePath { get; set; }
         [Required]
         public PizzaSauce PizzaSauce { get; set; }
 

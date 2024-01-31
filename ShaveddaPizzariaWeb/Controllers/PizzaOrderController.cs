@@ -45,7 +45,7 @@ namespace ShaveddaPizzariaWeb.Controllers
 			pizzaOrder.OrderDetails.HasHam = preset.HasHam;
 			pizzaOrder.OrderDetails.HasBeef = preset.HasBeef;
 
-			ViewData["PresetImage"] = preset.ImageTitle;
+			ViewData["PresetImage"] = preset.ImagePath;
 			return View(pizzaOrder);
 		}
 

@@ -14,7 +14,7 @@
 			<div class="col-12 mb-5 mt-5 ms-0 me-0">
 				<div class="row align-items-center bg-black bg-opacity-50 border border-5 border-warning rounded-3">
 					<div class="col-4">
-						<img src="~/images/pizzas/Create.png" class="w-100"/>
+						<img src="\images\presets\Create.png" class="w-100"/>
 					</div>
 					<div class="col-8 text-start font-monospace">
 						<h3>
@@ -28,13 +28,13 @@
 			</div>
 			@foreach(var preset in Model)
 			{
-				string imagePath;
-				imagePath = "~/images/Pizzas/" + preset.ImageTitle;
-				
-
-				<div class="col-4 mb-5">
-					<a class="presetImage" asp-controller="PizzaOrder" asp-action="OrderPreset" asp-route-id="@preset.PizzaId">
-						<img src=@imagePath class="w-100 bg-black bg-opacity-50 border border-4 border-warning rounded-2" asp-append-version="true" />
+				<div class="col-4 mb-4">
+					<a class="presetImage" style="text-decoration: none" asp-controller="PizzaOrder" asp-action="OrderPreset" asp-route-id="@preset.PizzaId">
+						<img src=@preset.ImagePath class="w-100 bg-black bg-opacity-50 border border-4 border-warning rounded-2" asp-append-version="true" />
+						<p class="fs-5 font-monospace text-warning mt-2"
+						   style="text-decoration: underline; text-decoration-color: rgba(0, 0, 0, .7); text-decoration-thickness: 5px">
+						   @preset.PizzaName
+						</p>
 					</a>	
 				</div>
 			}

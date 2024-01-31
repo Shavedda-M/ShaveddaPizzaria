@@ -12,9 +12,7 @@
 				<div class="row mt-2 mb-2 justify-content-center">
 					<div class="col-5">
 						@{
-							string imagePath = "~/images/Pizzas/" + Model.ImageTitle; ;
-
-							<img src=@imagePath class="w-100 bg-black bg-opacity-50 border border-3 border-primary rounded-2" asp-append-version="true" />
+							<img src="@Model.ImagePath" class="w-100 bg-black bg-opacity-50 border border-3 border-primary rounded-2" asp-append-version="true" />
 						}
 					</div>
 				</div>

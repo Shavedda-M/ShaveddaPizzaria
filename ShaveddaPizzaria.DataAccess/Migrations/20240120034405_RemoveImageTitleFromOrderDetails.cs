@@ -9,14 +9,14 @@ namespace ShaveddaPizzaria.DataAccess.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "ImageTitle",
+                name: "ImagePath",
                 table: "PizzaOrderDetails");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "ImageTitle",
+                name: "ImagePath",
                 table: "PizzaOrderDetails",
                 type: "nvarchar(max)",
                 nullable: false,

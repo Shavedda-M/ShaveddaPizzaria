@@ -21,7 +21,25 @@ namespace ShaveddaPizzaria.DataAccess.Repository
 
 		public void Update(PizzaPreset obj)
 		{
-			_dbContext.PizzaPresets.Update(obj);
+			var objFromDb = _dbContext.PizzaPresets.FirstOrDefault(u => u.PizzaId == obj.PizzaId);
+			if(objFromDb != null)
+			{
+				objFromDb.PizzaName = obj.PizzaName;
+				objFromDb.PizzaSauce = obj.PizzaSauce;
+				objFromDb.HasCheese = obj.HasCheese;
+				objFromDb.HasPepperoni = obj.HasPepperoni;
+				objFromDb.HasMushroom = obj.HasMushroom;
+				objFromDb.HasPineapple= obj.HasPineapple;
+				objFromDb.HasTuna = obj.HasTuna;
+				objFromDb.HasPrawn = obj.HasPrawn;
+				objFromDb.HasHam = obj.HasHam;
+				objFromDb.HasBeef = obj.HasBeef;
+
+				if(obj.ImagePath != null)
+				{
+					objFromDb.ImagePath = obj.ImagePath; 
+				}
+			}
 		}
 
         public void Save()

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShaveddaPizzaria.DataAccess.Data;
 
@@ -11,9 +12,10 @@ using ShaveddaPizzaria.DataAccess.Data;
 namespace ShaveddaPizzaria.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240129030812_ChangeImageTitleInPizzaPresetToImagePath")]
+    partial class ChangeImageTitleInPizzaPresetToImagePath
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -149,7 +151,7 @@ namespace ShaveddaPizzaria.DataAccess.Migrations
                             HasPineapple = false,
                             HasPrawn = false,
                             HasTuna = false,
-                            ImagePath = "\\images\\presets\\Margerita.png",
+                            ImagePath = "images\\presets\\Margerita.png",
                             PizzaName = "Margerita",
                             PizzaSauce = 1
                         },
@@ -164,7 +166,7 @@ namespace ShaveddaPizzaria.DataAccess.Migrations
                             HasPineapple = false,
                             HasPrawn = false,
                             HasTuna = false,
-                            ImagePath = "\\images\\presets\\Bolognese.png",
+                            ImagePath = "images\\presets\\Bolognese.png",
                             PizzaName = "Bolognese",
                             PizzaSauce = 1
                         },
@@ -179,7 +181,7 @@ namespace ShaveddaPizzaria.DataAccess.Migrations
                             HasPineapple = true,
                             HasPrawn = true,
                             HasTuna = false,
-                            ImagePath = "\\images\\presets\\Hawaiian.png",
+                            ImagePath = "images\\presets\\Hawaiian.png",
                             PizzaName = "Hawaiian",
                             PizzaSauce = 1
                         },
@@ -194,7 +196,7 @@ namespace ShaveddaPizzaria.DataAccess.Migrations
                             HasPineapple = false,
                             HasPrawn = false,
                             HasTuna = false,
-                            ImagePath = "\\images\\presets\\Carbonara.png",
+                            ImagePath = "images\\presets\\Carbonara.png",
                             PizzaName = "Carbonara",
                             PizzaSauce = 1
                         },
@@ -209,7 +211,7 @@ namespace ShaveddaPizzaria.DataAccess.Migrations
                             HasPineapple = false,
                             HasPrawn = false,
                             HasTuna = false,
-                            ImagePath = "\\images\\presets\\MeatFeast.png",
+                            ImagePath = "images\\presets\\MeatFeast.png",
                             PizzaName = "MeatFeast",
                             PizzaSauce = 1
                         },
@@ -224,7 +226,7 @@ namespace ShaveddaPizzaria.DataAccess.Migrations
                             HasPineapple = false,
                             HasPrawn = false,
                             HasTuna = false,
-                            ImagePath = "\\images\\presets\\Mushroom.png",
+                            ImagePath = "images\\presets\\Mushroom.png",
                             PizzaName = "Mushroom",
                             PizzaSauce = 1
                         },
@@ -239,7 +241,7 @@ namespace ShaveddaPizzaria.DataAccess.Migrations
                             HasPineapple = false,
                             HasPrawn = false,
                             HasTuna = false,
-                            ImagePath = "\\images\\presets\\Pepperoni.png",
+                            ImagePath = "images\\presets\\Pepperoni.png",
                             PizzaName = "Pepperoni",
                             PizzaSauce = 1
                         },
@@ -254,7 +256,7 @@ namespace ShaveddaPizzaria.DataAccess.Migrations
                             HasPineapple = false,
                             HasPrawn = true,
                             HasTuna = true,
-                            ImagePath = "\\images\\presets\\Seafood.png",
+                            ImagePath = "images\\presets\\Seafood.png",
                             PizzaName = "Seafood",
                             PizzaSauce = 1
                         },
@@ -269,7 +271,7 @@ namespace ShaveddaPizzaria.DataAccess.Migrations
                             HasPineapple = true,
                             HasPrawn = false,
                             HasTuna = false,
-                            ImagePath = "\\images\\presets\\Vegetarian.png",
+                            ImagePath = "images\\presets\\Vegetarian.png",
                             PizzaName = "Vegetarian",
                             PizzaSauce = 1
                         });

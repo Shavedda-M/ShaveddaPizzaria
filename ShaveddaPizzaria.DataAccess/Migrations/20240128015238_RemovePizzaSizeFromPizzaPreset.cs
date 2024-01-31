@@ -22,7 +22,7 @@ namespace ShaveddaPizzaria.DataAccess.Migrations
 
             migrationBuilder.InsertData(
                 table: "PizzaPresets",
-                columns: new[] { "PizzaId", "HasBeef", "HasCheese", "HasHam", "HasMushroom", "HasPepperoni", "HasPineapple", "HasPrawn", "HasTuna", "ImageTitle", "PizzaName", "PizzaSauce" },
+                columns: new[] { "PizzaId", "HasBeef", "HasCheese", "HasHam", "HasMushroom", "HasPepperoni", "HasPineapple", "HasPrawn", "HasTuna", "ImagePath", "PizzaName", "PizzaSauce" },
                 values: new object[,]
                 {
                     { 1, false, true, false, false, false, false, false, false, "Margerita.png", "Margerita", 1 },
