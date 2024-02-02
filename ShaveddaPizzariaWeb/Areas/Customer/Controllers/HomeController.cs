@@ -3,8 +3,9 @@ using ShaveddaPizzaria.DataAccess.Repository.IRepository;
 using ShaveddaPizzaria.Models;
 using System.Diagnostics;
 
-namespace ShaveddaPizzariaWeb.Controllers
+namespace ShaveddaPizzariaWeb.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -16,12 +17,12 @@ namespace ShaveddaPizzariaWeb.Controllers
             _presetRepo = presetRepo;
         }
 
-		public IActionResult Index()
-		{
-			return View(_presetRepo.GetAll());
-		}
+        public IActionResult Index()
+        {
+            return View(_presetRepo.GetAll());
+        }
 
-		public IActionResult Privacy()
+        public IActionResult Privacy()
         {
             return View();
         }

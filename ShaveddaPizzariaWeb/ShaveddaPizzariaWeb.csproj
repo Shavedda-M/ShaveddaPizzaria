@@ -27,4 +27,8 @@
     <ProjectReference Include="..\ShaveddaPizzaria.Utility\ShaveddaPizzaria.Utility.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>
